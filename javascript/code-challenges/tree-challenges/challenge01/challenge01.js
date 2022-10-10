@@ -18,7 +18,6 @@ function constructTree (preorder, inorder) {
         let root = new Node(preorder[0]);
         //select the mid to slice it
         let mid = inorder.indexOf(preorder[0]);
-        console.log(mid);
         root.left = constructTree(preorder.slice(1, mid + 1), inorder.slice(0, mid));
         root.right = constructTree(preorder.slice(mid + 1), inorder.slice(mid + 1));
         return root;
