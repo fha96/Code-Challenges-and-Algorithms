@@ -21,8 +21,23 @@ function isSumEqual(arr, value) {
     return false;
 }
 
+function isSumEqual3(array, value) {
 
-console.log(isSumEqual(array, k));
+    for(let i = 0 ; i < array.length ; i++) {
+        let tempElement = array[i];
+        for(let j = i+1 ; j < array.length ; j++) {
+            if(tempElement + array[j] === value) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+module.exports = {
+    isSumEqual,
+    isSumEqual3
+}
 
 
 // function isSumEqual2(arr, value) {
